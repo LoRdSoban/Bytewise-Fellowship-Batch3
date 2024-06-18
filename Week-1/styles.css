@@ -118,7 +118,6 @@ a:hover {
 
 /* Aside Styling */
 aside {
-    width: 250px;
     padding: 2rem 1rem;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -127,6 +126,7 @@ aside {
     position: fixed;
     top: 7rem;
     right: 1rem;
+    width: auto;
     height: auto;
 }
 
