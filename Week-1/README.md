@@ -1,9 +1,9 @@
 ## Index.html
 
-![index.html](screenshots/index.png)
+![index.html](screenshots/Index.png)
 
 ---
 
 ## Blog.html
 
-![blog.html](screenshots/blog.png)
+![blog.html](screenshots/Blog.png)
