@@ -1,0 +1,143 @@
+/* Reset default styles */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+
+.background-red{
+    background-color: rgb(248, 151, 151);
+}
+
+.background-green{
+    background-color: rgb(151, 248, 151);
+}
+
+.background-blue{
+    background-color: rgb(151, 151, 248);
+}
+
+.background-yellow{
+    background-color: rgb(248, 248, 151);
+}
+
+.background-purple{
+    background-color: rgb(248, 151, 248);
+}
+
+.background-cyan{
+    background-color: rgb(151, 248, 248);
+}
+
+
+/* Add your custom styles below */
+
+.flex{
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+.header{
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.main-grid{
+    display: grid;
+    gap: 1.5rem;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'one'
+    'two'
+    'three'
+    'four'
+    'five';
+
+    padding-block: 2rem;
+    width: min(95%, 70rem);
+    margin-inline: auto;  
+}
+
+@media (min-width: 30em){
+
+    .main-grid{
+        grid-template-areas: 
+        'one one'
+        'two three'
+        'four three'
+        'five five';
+    }
+
+}
+
+
+@media (min-width: 50em){
+    /* .main-grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-col-span-2{
+        grid-column: span 2;
+    }
+
+    .grid-item:nth-child(3){
+        grid-row: span 2;
+    } */
+
+    .main-grid{
+        grid-template-areas: 
+        'one one two three'
+        'four five five three';
+    }
+
+}
+
+
+
+.grid-item{
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item:nth-child(1){
+    grid-area: one;
+}
+
+.grid-item:nth-child(2){
+    grid-area: two;
+}   
+
+.grid-item:nth-child(3){
+    grid-area: three;
+}   
+
+.grid-item:nth-child(4){
+    grid-area: four;
+}   
+
+.grid-item:nth-child(5){
+    grid-area: five;
+}   
+
