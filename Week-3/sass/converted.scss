@@ -1,0 +1,208 @@
+/* Variables */
+$font-stack: 'Georgia', serif;
+$font-stack-alt: 'Helvetica Neue', Arial, sans-serif;
+$primary-color: #2c3e50;
+$secondary-color: #ecf0f1;
+$accent-color: #3498db;
+$accent-color-hover: #2980b9;
+$body-bg: #f4f4f4;
+$text-color: #333;
+$text-color-light: #555;
+$text-color-lighter: #999;
+$border-color: #ddd;
+$b-s: 0 4px 8px rgba(0, 0, 0, 0.1);
+$b-r: 8px;
+$padding: 2rem;
+$padding-small: 0.5rem;
+$padding-large: 1rem;
+
+/* Mixins */
+@mixin transition($property, $duration) {
+  transition: $property $duration ease;
+}
+
+@mixin b-s($shadow) {
+  box-shadow: $shadow;
+}
+
+@mixin b-r($radius) {
+    border-radius: $radius;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Global Styles */
+body {
+  font-family: $font-stack;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: $body-bg;
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main Header */
+#main-header {
+  background-color: $primary-color;
+  color: $secondary-color;
+  text-align: center;
+  padding: $padding-large $padding;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  @include b-s(0 2px 4px rgba(0, 0, 0, 0.1));
+  @include flex-center;
+  justify-content: space-around;
+
+  h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: $font-stack-alt;
+  }
+
+  .back-button {
+    background-color: $accent-color;
+    color: $secondary-color;
+    border: none;
+    padding: $padding-small $padding;
+    font-size: 1rem;
+    @include b-r(5px);
+    cursor: pointer;
+    text-decoration: none;
+    @include transition(background-color, 0.3s);
+
+    &:hover {
+      background-color: $accent-color-hover;
+    }
+  }
+}
+
+/* Main Footer */
+#main-footer {
+  text-align: center;
+  font-size: 16px;
+  padding: $padding-large;
+  background-color: $primary-color;
+  color: $secondary-color;
+  border-top: 4px solid darken($primary-color, 10%);
+  margin-top: $padding;
+  width: 100%;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 7rem;
+  width: 100%;
+}
+
+/* Section Styling */
+section {
+  margin: $padding $padding-large;
+  padding: $padding;
+  background-color: $secondary-color;
+  border: 1px solid $border-color;
+  @include b-r($b-r);
+  @include b-s($b-s);
+  max-width: 800px;
+  flex: 1;
+}
+
+/* Articles */
+.post {
+  border-bottom: 1px solid lighten($border-color, 20%);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+    color: $text-color;
+    font-family: $font-stack-alt;
+  }
+
+  small {
+    color: $text-color-lighter;
+  }
+
+  p {
+    font-size: 1rem;
+    color: $text-color-light;
+  }
+}
+
+/* Links */
+a {
+  color: $accent-color;
+  text-decoration: none;
+  @include transition(color, 0.3s);
+
+  &:hover {
+    color: $accent-color-hover;
+    text-decoration: underline;
+  }
+}
+
+/* Aside Styling */
+aside {
+  padding: $padding $padding-large;
+  background-color: $secondary-color;
+  border: 1px solid $border-color;
+  @include b-r($b-r);
+  @include b-s($b-s);
+  position: fixed;
+  top: 7rem;
+  right: $padding-large;
+  width: auto;
+  height: auto;
+
+  h3 {
+    margin-top: 0;
+    font-family: $font-stack-alt;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 0.5rem 0;
+
+      a {
+        color: $accent-color;
+        text-decoration: none;
+        @include transition(color, 0.3s);
+
+        &:hover {
+          color: $accent-color-hover;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8rem;
+  }
+
+  aside {
+    position: relative;
+    width: 90%;
+    top: 0;
+    margin: $padding-large 0;
+  }
+}
