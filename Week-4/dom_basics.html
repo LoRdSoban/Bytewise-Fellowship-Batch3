@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favourite Video Games</title>
+    <style>
+      /* Resetting default browser styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: linear-gradient(to bottom, #1b2838, #2a3b47);
+        font-family: Arial, sans-serif;
+        color: white;
+      }
+
+      .container {
+        text-align: center;
+        border: 2px solid white;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: #2a3b47;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      .games-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .games-list li  {
+        background-color: white;
+        color: black;
+        margin: 2px 0;
+        padding: 10px;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="main_heading">Favourite Video Games</h1>
+      <ul class="games-list">
+        <li class="list_items">Fortnite</li>
+        <li class="list_items">GTA VI</li>
+        <li class="list_items">Valorant</li>
+        <li class="list_items">CS GO 2</li>
+        <li class="list_items">LOL</li>
+      </ul>
+    </div>
+  </body>
+  <script src="./main.js"></script>
+</html>

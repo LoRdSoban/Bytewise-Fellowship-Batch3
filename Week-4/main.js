@@ -1,5 +1,8 @@
-const title = document.querySelector('#main_heading');
+const ul = document.querySelector('ul');
+const li = document.createElement('li');
 
-title.style.color = 'red';
+ul.append(li);
 
-console.log(title);
+li.innerText = 'Battlefield 2042'; 
+
+console.log(ul.children);
